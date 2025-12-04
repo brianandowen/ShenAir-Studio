@@ -1,7 +1,10 @@
-// app/page.tsx
-// ShenAir Studio 單頁官網（電影系 Cinematic Dark 版本）
+"use client";
+
+import { useState } from "react";
 
 export default function Home() {
+  const [previewSrc, setPreviewSrc] = useState<string | null>(null);
+
   return (
     <main className="min-h-screen bg-[#050608] text-slate-100">
       <header className="sticky top-0 z-20 border-b border-white/5 bg-black/70 backdrop-blur">
@@ -59,16 +62,17 @@ export default function Home() {
             </div>
           </div>
 
-<div className="flex-1">
-  <div className="aspect-video w-full overflow-hidden rounded-xl border border-white/10">
-    <img
-      src="/stills/logo.jpeg"
-      alt="Cinematic Frame"
-      className="h-full w-full object-cover"
-    />
-  </div>
-</div>
-
+          <div className="flex-1 flex justify-center md:justify-end">
+            <div className="w-full max-w-sm">
+              <div className="aspect-square w-full overflow-hidden rounded-xl border border-white/10 bg-black flex items-center justify-center">
+                <img
+                  src="/stills/logo.jpeg"
+                  alt="ShenAir Studio Logo"
+                  className="h-[80%] w-[80%] object-contain"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -294,7 +298,8 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid gap-10 md:grid-cols-[2fr_1fr] md:items-start">
+          <div className="space-y-10">
+
             <div className="space-y-6">
               <div>
                 <p className="text-sm font-semibold text-slate-100">
@@ -302,7 +307,8 @@ export default function Home() {
                 </p>
 
                 <p className="mt-3 text-base text-slate-200">
-                  TikTok： <span className="font-semibold">@ShenAirStudio</span>
+                  TikTok：{" "}
+                  <span className="font-semibold">@ShenAirStudio</span>
                 </p>
 
                 <p className="mt-1 text-base text-slate-200">
@@ -316,48 +322,52 @@ export default function Home() {
                   可以快速感受整體風格與節奏。
                 </p>
                 <p>
-                  若有合作企劃或正式拍攝需求，建議用 LINE
-                  溝通細節，包含日期、地點、預算與期待的畫面。
+                  若有合作企劃或正式拍攝需求，建議用 LINE 溝通細節，
+                  包含日期、地點、預算與期待的畫面。
                 </p>
               </div>
             </div>
 
-            <div className="space-y-4 md:pt-4">
-              <p className="text-sm text-slate-300">快速掃描前往</p>
+<div>
+  <p className="text-sm text-slate-300 mb-3">快速掃描前往</p>
 
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-4 rounded-lg border border-white/10 bg-black/40 px-4 py-4">
-                  <img
-                    src="/stills/tiktok.jpeg"
-                    alt="TikTok QR"
-                    className="h-32 w-32 rounded border border-white/20 object-cover"
-                  />
-                  <div className="space-y-1">
-                    <p className="text-sm font-semibold text-slate-100">
-                      TikTok
-                    </p>
-                    <p className="text-sm text-slate-400">
-                      掃描 QR Code 直接開啟 ShenAir Studio TikTok 作品頁，
-                      瀏覽更多完整影片。
-                    </p>
-                  </div>
-                </div>
+  <div className="flex flex-row gap-6 flex-wrap">
 
-                <div className="flex items-center gap-4 rounded-lg border border-white/10 bg-black/40 px-4 py-4">
-                  <img
-                    src="/stills/line.jpeg"
-                    alt="LINE QR"
-                    className="h-32 w-32 rounded border border-white/20 object-cover"
-                  />
-                  <div className="space-y-1">
-                    <p className="text-sm font-semibold text-slate-100">LINE</p>
-                    <p className="text-sm text-slate-400">
-                      掃描加入 LINE 聯絡帳號，適合初步討論拍攝內容、時段與大致預算。
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+    {/* TikTok */}
+    <div className="flex items-center gap-4 rounded-lg border border-white/10 bg-black/40 px-4 py-4">
+      <img
+        src="/stills/tiktok.jpeg"
+        alt="TikTok QR"
+        className="h-32 w-32 rounded border border-white/20 object-contain cursor-pointer hover:opacity-80 transition"
+        onClick={() => setPreviewSrc("/stills/tiktok.jpeg")}
+      />
+      <div className="space-y-1">
+        <p className="text-sm font-semibold text-slate-100">TikTok</p>
+        <p className="text-sm text-slate-400">
+          掃描 QR Code 直接開啟 ShenAir Studio TikTok 作品頁。
+        </p>
+      </div>
+    </div>
+
+    {/* LINE */}
+    <div className="flex items-center gap-4 rounded-lg border border-white/10 bg-black/40 px-4 py-4">
+      <img
+        src="/stills/line.jpeg"
+        alt="LINE QR"
+        className="h-32 w-32 rounded border border-white/20 object-contain cursor-pointer hover:opacity-80 transition"
+        onClick={() => setPreviewSrc("/stills/line.jpeg")}
+      />
+      <div className="space-y-1">
+        <p className="text-sm font-semibold text-slate-100">LINE</p>
+        <p className="text-sm text-slate-400">
+          掃描加入 LINE 聯絡帳號，適合初步討論拍攝與預算。
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
           </div>
         </div>
       </section>
@@ -368,6 +378,19 @@ export default function Home() {
           <span>All Rights Reserved.</span>
         </div>
       </footer>
+
+      {previewSrc && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          onClick={() => setPreviewSrc(null)}
+        >
+          <img
+            src={previewSrc}
+            alt="QR Preview"
+            className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg"
+          />
+        </div>
+      )}
     </main>
   );
 }
