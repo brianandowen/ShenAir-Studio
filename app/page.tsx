@@ -62,7 +62,7 @@ export default function Home() {
 <div className="flex-1">
   <div className="aspect-video w-full overflow-hidden rounded-xl border border-white/10">
     <img
-      src="/stills/god.jpg"
+      src="/stills/logo.jpeg"
       alt="Cinematic Frame"
       className="h-full w-full object-cover"
     />
@@ -306,7 +306,7 @@ export default function Home() {
                 </p>
 
                 <p className="mt-1 text-base text-slate-200">
-                  LINE： <span className="font-semibold">官方帳號</span>
+                  LINE： <span className="font-semibold">yukan11</span>
                 </p>
               </div>
 
