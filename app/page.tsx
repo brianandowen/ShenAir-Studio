@@ -174,7 +174,7 @@ export default function Home() {
 
       <section
         id="films"
-        className="border-b border-white/5 bg-[#030712] py-18 md:py-20"
+        className="border-b border-white/5 bg-[#030712] py-20 md:py-20"
       >
         <div className="mx-auto max-w-4xl px-6 md:px-4">
           <div className="space-y-4">
@@ -299,7 +299,6 @@ export default function Home() {
           </div>
 
           <div className="space-y-10">
-
             <div className="space-y-6">
               <div>
                 <p className="text-sm font-semibold text-slate-100">
@@ -328,46 +327,45 @@ export default function Home() {
               </div>
             </div>
 
-<div>
-  <p className="text-sm text-slate-300 mb-3">快速掃描前往</p>
+            <div>
+              <p className="text-sm text-slate-300 mb-3">快速掃描前往</p>
 
-  <div className="flex flex-row gap-6 flex-wrap">
+              <div className="flex flex-row gap-6 flex-wrap">
+                <div className="flex items-center gap-4 rounded-lg border border-white/10 bg-black/40 px-4 py-4">
+                  <img
+                    src="/stills/tiktok.jpeg"
+                    alt="TikTok QR"
+                    className="h-32 w-32 rounded border border-white/20 object-contain cursor-pointer hover:opacity-80 transition"
+                    onClick={() => setPreviewSrc("/stills/tiktok.jpeg")}
+                  />
+                  <div className="space-y-1">
+                    <p className="text-sm font-semibold text-slate-100">
+                      TikTok
+                    </p>
+                    <p className="text-sm text-slate-400">
+                      掃描 QR Code 直接開啟 ShenAir Studio TikTok 作品頁。
+                    </p>
+                  </div>
+                </div>
 
-    {/* TikTok */}
-    <div className="flex items-center gap-4 rounded-lg border border-white/10 bg-black/40 px-4 py-4">
-      <img
-        src="/stills/tiktok.jpeg"
-        alt="TikTok QR"
-        className="h-32 w-32 rounded border border-white/20 object-contain cursor-pointer hover:opacity-80 transition"
-        onClick={() => setPreviewSrc("/stills/tiktok.jpeg")}
-      />
-      <div className="space-y-1">
-        <p className="text-sm font-semibold text-slate-100">TikTok</p>
-        <p className="text-sm text-slate-400">
-          掃描 QR Code 直接開啟 ShenAir Studio TikTok 作品頁。
-        </p>
-      </div>
-    </div>
-
-    {/* LINE */}
-    <div className="flex items-center gap-4 rounded-lg border border-white/10 bg-black/40 px-4 py-4">
-      <img
-        src="/stills/line.jpeg"
-        alt="LINE QR"
-        className="h-32 w-32 rounded border border-white/20 object-contain cursor-pointer hover:opacity-80 transition"
-        onClick={() => setPreviewSrc("/stills/line.jpeg")}
-      />
-      <div className="space-y-1">
-        <p className="text-sm font-semibold text-slate-100">LINE</p>
-        <p className="text-sm text-slate-400">
-          掃描加入 LINE 聯絡帳號，適合初步討論拍攝與預算。
-        </p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
+                <div className="flex items-center gap-4 rounded-lg border border-white/10 bg-black/40 px-4 py-4">
+                  <img
+                    src="/stills/line.jpeg"
+                    alt="LINE QR"
+                    className="h-32 w-32 rounded border border-white/20 object-contain cursor-pointer hover:opacity-80 transition"
+                    onClick={() => setPreviewSrc("/stills/line.jpeg")}
+                  />
+                  <div className="space-y-1">
+                    <p className="text-sm font-semibold text-slate-100">
+                      LINE
+                    </p>
+                    <p className="text-sm text-slate-400">
+                      掃描加入 LINE 聯絡帳號，適合初步討論拍攝與預算。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
